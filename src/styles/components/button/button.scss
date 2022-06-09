@@ -1,0 +1,18 @@
+.btn{
+    border: none;
+    cursor: pointer;
+    &__main{
+        background-color: var(--BtnMain);
+        color: var(--colorWhite);
+        font-size: 2.5rem;
+        line-height: 2.9rem;
+        font-weight: 400;
+        transition: 400ms ease;
+        &:hover{
+            border: 2px solid var(--BtnMain);
+            color: var(--BtnMain);
+            background-color: var(--BgWhite);
+            transition: 400ms ease;
+        }
+    }
+}

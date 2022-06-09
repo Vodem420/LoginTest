@@ -1,0 +1,33 @@
+.v-input{
+    @include flex(flex);
+    flex-direction: column;
+    position: relative;
+    label{
+        font-size: 1.8rem;
+        line-height: 2.1rem;
+        color: var(--ColorBlack);
+        padding-bottom: .5rem;
+    }
+    input{
+        background-color: var(--colorWhite);
+        border: 1px solid #9A9A9A;
+        height: 5rem;
+        font-size: 1.8rem;
+        &.errorInput{
+            border: 1px solid var(--TextError);
+        }
+    }
+    &.errorInput{
+        .errorContainer{
+            position: absolute;
+            bottom: -2.5rem;
+            color: var(--TextError);
+            font-size: 1.6rem;
+            font-weight: bold;
+            &::before{
+                content: '✖';
+                padding-right: .5rem;
+            }
+        }
+    }
+}

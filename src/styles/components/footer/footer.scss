@@ -1,0 +1,53 @@
+.footer{
+    max-width: var(--contentWidth);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    color: var(--colorWhite);
+    font-weight: bold;
+    @include media(desktop){
+        max-width: 96%;
+    }
+    &__wrapper{
+        background-color: var(--BgFooter);
+    }
+    &__top{
+        @include flex(flex, center, space-between);
+        padding:  3rem 0;
+        border-bottom: 1px solid #fff;
+        @include media(tablet){
+            flex-direction: column;
+            img{
+                padding-bottom: 2rem;
+            }
+        }
+        img{
+            width: 5.6rem;
+            cursor: pointer;
+        }
+        &__right {
+            @include media(p-tablet){
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            a{
+                cursor: pointer;
+                padding: 1rem;
+                &:not(:last-child){
+                    padding-right: 1rem;
+                }
+                &:last-child{
+                    padding-right: 0;
+                }
+            }
+        }
+    }
+    &__bottom{
+        padding:  3rem 0;
+        @include media(p-tablet){
+            text-align: center;
+            line-height: 2rem;
+        }
+    }
+}

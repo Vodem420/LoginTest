@@ -1,0 +1,29 @@
+.header{
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    &__strangeSpace{
+        height: 5rem;
+        background-color: var(--BgHeader);
+    }
+    &__wrapper{
+        height: 9.5rem;
+        background: linear-gradient(180deg, #00AFED 0%, #00569A 100%);
+    }
+    &__left{
+        height: 100%;
+        max-width: var(--contentWidth);
+        margin: 0 auto;
+        @include flex(flex, center, false);
+        img{
+            cursor: pointer;
+            width: 10rem;
+        }
+        @include media(desktop){
+            max-width: 96%;
+        }
+    }
+    &__fix{
+        height: var(--headerHeigth);
+    }
+}

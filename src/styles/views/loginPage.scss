@@ -1,0 +1,119 @@
+.banner{
+    max-width: var(--contentWidth);
+    width: 100%;
+    margin: 0 auto;
+    line-height: 8.6rem;
+    @include media(reverso-desktop){
+        padding-bottom: 7rem;
+    }
+    @include media(desktop){
+        text-align: center;
+        padding-top: 5rem;
+    }
+    &__wrapper{
+        height: 45rem;
+        @include flex(flex, flex-end, false);
+        @include media(desktop){
+            align-items: flex-start;
+        }
+    }
+    p{
+        font-size: 5.5rem;
+        color: var(--colorWhite);
+        font-weight: bold;
+        @include media(p-tablet){
+            font-size: 4.5rem;
+            line-height: 6rem;
+        }
+    }
+}
+.loginContent{
+    max-width: var(--contentWidth);
+    margin: 0 auto;
+    padding: 4rem 0 0;
+    @include flex(flex, false, space-between);
+    @include media(desktop){
+        flex-direction: column-reverse;
+        align-items: center;
+        max-width: 96%;
+    }
+    &__left{
+        max-width: 67rem;
+        color: var(--ColorBlack);
+        @include media(desktop){
+            position: relative;
+            top: -15rem;
+            max-width: 96%;
+        }
+        &:first-child{
+            line-height: 2.5rem;
+        }
+        p{
+            font-weight: 500;
+        }
+        b{
+            font-weight: bold;
+        }
+        > :not(:last-child){
+            margin-bottom: 1.5rem;
+        }
+        &__item{
+            img{
+                padding-right: 1.5rem;
+            }
+            b{
+                display: inline-block;
+                padding-bottom: 1rem;
+            }
+            p{
+                font-size: 1.4rem;
+                line-height: 2.2rem;
+                padding-left: 4rem;
+            }
+        }
+    }
+    &__right{
+        width: 48rem;
+        padding: 4rem 3rem 0;
+        position: relative;
+        top: -22.5rem;
+        background-color: var(--BgWhite);
+        box-shadow: 2px 2px 15px 2px rgba(0, 0, 0, 0.1);
+        @include media(desktop){
+            top: -20rem;
+        }
+        @include media(phone){
+            width: 100%;
+            max-width: 96%;
+        }
+        .v-input{
+            margin-bottom: 4rem;
+        }
+        button{
+            width: 100%;
+            height: 5rem;
+            margin-bottom: 2rem;
+        }
+        .helpButtons{
+            span{
+                display: block;
+                font-weight: 600;
+                text-align: center;
+                cursor: pointer;
+            }
+            :first-child{
+                font-size: 2rem;
+                color: var(--BtnMain);
+                margin-bottom: 2rem;
+            }
+            :last-child{
+                height: 6rem;
+                font-size: 2rem;
+                color: var(--ColorBlack);
+                background: #F6F6F6;
+                padding: 2rem 0;
+                margin: 0 -3rem;
+            }
+        }
+    }
+}

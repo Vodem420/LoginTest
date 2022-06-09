@@ -1,0 +1,138 @@
+/*Vars*/
+:root {
+  /*Colors*/
+  --BgHeader : #333;
+  --BgFooter: #333;
+  --BgWhite: #fff;
+  --colorWhite: #fff;
+  --ColorBlack: #333;
+  --BtnMain: #0076C0;
+  --TextError: #D60000;
+
+  /*Content Space*/
+  --contentWidth: 116rem;
+  --headerHeigth: calc(9.5rem + 5rem);
+  /*Content Space*/
+}
+/*Vars*/
+
+
+@mixin text__ellipsis($ellipsisRows:false) {
+    @if ($ellipsisRows) {
+      display: -webkit-box;
+      -webkit-line-clamp: $ellipsisRows;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    } @else {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+}
+
+@mixin flex($flex_type:flex, $flex_align:false, $flex_justify:false) {
+display: $flex_type;
+@if $flex_align {
+    align-items: $flex_align;
+}
+@if $flex_justify {
+    justify-content: $flex_justify;
+}
+}
+
+@mixin media($point) {
+  @if $point == reverso-xxl-desktop {
+    @media all and (min-width: 2000px) {
+      @content;
+    }
+  }
+  @if $point == reverso-xl-desktop {
+    @media all and (min-width: 1312px) {
+      @content;
+    }
+  }
+  @if $point == xl-desktop {
+    @media all and (max-width: 1312px) {
+      @content;
+    }
+  }
+  @if $point == reverso-desktop {
+    @media all and (min-width: 1251px) {
+      @content;
+    }
+  }
+  @if $point == desktop {
+    @media all and (max-width: 1250px) {
+      @content;
+    }
+  }
+  @if $point == tablet-desktop {
+    @media all and (min-width: 992px) and (max-width: 1250px) {
+      @content;
+    }
+  }
+  @if $point == tablet {
+    @media all and (max-width: 991px) { //991px если оставить 891px то айфоны типа 12 max pro не попадают м мобильный брейкпоинт в лендскейпе поскольку имеют 968 относительных PX ширины
+      @content;
+    }
+  }
+  @if $point == reverso-tablet {
+    @media all and (min-width: 992px) { //992px
+      @content;
+    }
+  }
+  @if $point == p-tablet {
+    @media all and (max-width: 767px) {
+      @content;
+    }
+  }
+  @if $point == reverso-p-tablet {
+    @media all and (min-width: 768px) {
+      @content;
+    }
+  }
+  @if $point == p-tablet-tablet {
+    @media all and (min-width: 882px) and (max-width: 991px) {
+      @content;
+    }
+  }
+  @if $point == tablet-p-tablet {
+    @media all and (min-width: 768px) and (max-width: 891px) { //992px
+      @content;
+    }
+  }
+  @if $point == tablet-phone {
+    @media all and (min-width: 641px) and (max-width: 892px) { //992px
+      @content;
+    }
+  }
+  @if $point == reverso-phone {
+    @media all and (min-width: 641px) {
+      @content;
+    }
+  }
+  @if $point == phone {
+    @media all and (max-width: 640px) {
+      @content;
+    }
+  }
+  @if $point == p-phone {
+    @media all and (max-width: 480px) {
+      @content;
+    }
+  }
+  @if $point == reverso-p-phone {
+    @media all and (min-width: 481px) {
+      @content;
+    }
+  }
+  @if $point == p-phone-tablet {
+    @media all and (min-width: 481px) and (max-width: 991px) { //992px
+      @content;
+    }
+  } @else {
+    @media all and ($point) {
+      @content;
+    }
+  }
+}
